@@ -53,7 +53,7 @@ return {
     },
     -- Split panes
     {
-      key = "x",
+      key = "p",
       mods = "ALT",
       action = act.ActivateKeyTable({
         name = "split_pane",
@@ -66,7 +66,7 @@ return {
       action = act.ActivateTabRelative(1),
     },
     {
-      key = "p",
+      key = "b",
       mods = "ALT",
       action = act.ActivateTabRelative(-1),
     },
