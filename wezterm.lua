@@ -1,5 +1,3 @@
--- TODO: Checkout key tables
-
 local wezterm = require("wezterm")
 local act = wezterm.action
 
@@ -12,6 +10,7 @@ wezterm.on("update-right-status", function(window)
 end)
 
 return {
+  audible_bell = "Disabled",
   hide_tab_bar_if_only_one_tab = true,
   window_background_opacity = 0.9,
 
@@ -145,6 +144,18 @@ return {
       key = "Enter",
       mods = "LEADER",
       action = act.ActivateCommandPalette,
+    },
+  },
+  mouse_bindings = {
+    {
+      event = { Up = { streak = 1, button = "Right" } },
+      mods = "NONE",
+      action = act.PasteFrom("Clipboard"),
+    },
+    {
+      event = { Up = { streak = 1, button = "Left" } },
+      mods = "ALT",
+      action = act.OpenLinkAtMouseCursor,
     },
   },
 }
