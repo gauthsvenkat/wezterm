@@ -11,7 +11,11 @@ end)
 
 return {
   audible_bell = "Disabled",
+
   hide_tab_bar_if_only_one_tab = true,
+  use_fancy_tab_bar = false,
+  tab_and_split_indices_are_zero_based = true,
+
   window_background_opacity = 0.9,
 
   leader = { key = "Enter", mods = "ALT" },
