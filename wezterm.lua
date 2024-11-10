@@ -12,6 +12,7 @@ end)
 return {
   audible_bell = "Disabled",
 
+  font_size = 16.0,
   hide_tab_bar_if_only_one_tab = true,
   use_fancy_tab_bar = false,
   tab_and_split_indices_are_zero_based = true,
