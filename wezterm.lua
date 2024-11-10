@@ -43,7 +43,7 @@ return {
     },
     split_pane = {
       { key = "h", action = act.SplitPane({ direction = "Left" }) },
-      { key = "j", action = act.SplitPane({ direction = "Down" }) },
+      { key = "j", action = act.SplitPane({ direction = "Down", size = { Percent = 25 } }) },
       { key = "k", action = act.SplitPane({ direction = "Up" }) },
       { key = "l", action = act.SplitPane({ direction = "Right" }) },
     },
