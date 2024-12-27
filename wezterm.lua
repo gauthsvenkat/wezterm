@@ -21,7 +21,6 @@ return {
 
   window_background_opacity = 0.9,
 
-  leader = { key = "Enter", mods = "ALT" },
   key_tables = {
     resize_pane = {
       { key = "h", action = act.AdjustPaneSize({ "Left", 1 }) },
@@ -77,11 +76,6 @@ return {
       mods = "ALT",
       action = act.ActivateTabRelative(-1),
     },
-    {
-      key = "t",
-      mods = "ALT|SHIFT",
-      action = act.ShowTabNavigator,
-    },
     -- Moving tabs
     {
       key = "m",
@@ -122,7 +116,7 @@ return {
       action = act.ActivatePaneDirection("Right"),
     },
     {
-      key = "s",
+      key = "f",
       mods = "ALT",
       action = act.PaneSelect({ mode = "Activate" }),
     },
@@ -142,14 +136,14 @@ return {
       }),
     },
     {
-      key = "s",
+      key = "f",
       mods = "ALT|SHIFT",
       action = act.PaneSelect({ mode = "SwapWithActiveKeepFocus" }),
     },
     -- Misc
     {
       key = "Enter",
-      mods = "LEADER",
+      mods = "ALT",
       action = act.ActivateCommandPalette,
     },
   },
