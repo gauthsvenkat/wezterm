@@ -13,6 +13,7 @@ return {
   audible_bell = "Disabled",
 
   enable_wayland = false,
+  front_end = "WebGpu", -- Doesn't work on thinkpad without this
   -- hack to make terminal similarly sized on both desktop and mac
   font_size = (wezterm.target_triple:find("linux") ~= nil) and 12.0 or 16.0,
   hide_tab_bar_if_only_one_tab = true,
