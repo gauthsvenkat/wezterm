@@ -11,11 +11,10 @@ end)
 
 return {
   audible_bell = "Disabled",
+  warn_about_missing_glyphs = false,
 
-  enable_wayland = false,
-  front_end = "WebGpu", -- Doesn't work on thinkpad without this
-  -- hack to make terminal similarly sized on both desktop and mac
-  font_size = (wezterm.target_triple:find("linux") ~= nil) and 12.0 or 16.0,
+  font_size = 12,
+
   hide_tab_bar_if_only_one_tab = true,
   use_fancy_tab_bar = false,
   tab_and_split_indices_are_zero_based = true,
@@ -23,27 +22,6 @@ return {
   window_background_opacity = 0.9,
 
   key_tables = {
-    resize_pane = {
-      { key = "h", action = act.AdjustPaneSize({ "Left", 1 }) },
-      { key = "j", action = act.AdjustPaneSize({ "Down", 1 }) },
-      { key = "k", action = act.AdjustPaneSize({ "Up", 1 }) },
-      { key = "l", action = act.AdjustPaneSize({ "Right", 1 }) },
-      { key = "Escape", action = "PopKeyTable" },
-    },
-    rotate_pane = {
-      { key = "h", action = act.RotatePanes("CounterClockwise") },
-      { key = "j", action = act.RotatePanes("Clockwise") },
-      { key = "k", action = act.RotatePanes("CounterClockwise") },
-      { key = "l", action = act.RotatePanes("Clockwise") },
-      { key = "Escape", action = "PopKeyTable" },
-    },
-    rotate_tab = {
-      { key = "h", action = act.MoveTabRelative(-1) },
-      { key = "j", action = act.MoveTabRelative(1) },
-      { key = "k", action = act.MoveTabRelative(-1) },
-      { key = "l", action = act.MoveTabRelative(1) },
-      { key = "Escape", action = "PopKeyTable" },
-    },
     split_pane = {
       { key = "h", action = act.SplitPane({ direction = "Left" }) },
       { key = "j", action = act.SplitPane({ direction = "Down", size = { Percent = 25 } }) },
@@ -76,24 +54,6 @@ return {
       key = "b",
       mods = "ALT",
       action = act.ActivateTabRelative(-1),
-    },
-    -- Moving tabs
-    {
-      key = "m",
-      mods = "ALT|SHIFT",
-      action = act.ActivateKeyTable({
-        name = "rotate_tab",
-        one_shot = false,
-      }),
-    },
-    -- Resizing panes
-    {
-      key = "r",
-      mods = "ALT",
-      action = act.ActivateKeyTable({
-        name = "resize_pane",
-        one_shot = false,
-      }),
     },
     -- Navigating panes
     {
@@ -135,11 +95,6 @@ return {
         name = "rotate_pane",
         one_shot = false,
       }),
-    },
-    {
-      key = "f",
-      mods = "ALT|SHIFT",
-      action = act.PaneSelect({ mode = "SwapWithActiveKeepFocus" }),
     },
     -- Misc
     {
