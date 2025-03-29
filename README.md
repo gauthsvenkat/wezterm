@@ -4,5 +4,5 @@
 Clone this repository to the appropriate location
 
 ```bash
-git clone git@github.com:gauthsvenkat/wezterm.git ~/.config/
+git clone git@github.com:gauthsvenkat/wezterm.git ~/.config/wezterm/
 ```
